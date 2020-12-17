@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name scans)(type KiCad)(uri ${KIPRJMOD}/scans)(options "")(descr ""))
+  (lib (name sony)(type KiCad)(uri ${KIPRJMOD}/sony.pretty)(options "")(descr ""))
+  (lib (name esp32-wrover)(type KiCad)(uri ${KIPRJMOD}/lib/esp32-wrover-kicad/esp32-wrover.pretty)(options "")(descr ""))
+)

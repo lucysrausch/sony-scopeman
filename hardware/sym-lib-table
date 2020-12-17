@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name esp32-wrover)(type Legacy)(uri ${KIPRJMOD}/lib/esp32-wrover-kicad/esp32-wrover.lib)(options "")(descr ""))
+  (lib (name TPS63700DRCT)(type Legacy)(uri ${KIPRJMOD}/lib/TPS63700DRCT.lib)(options "")(descr ""))
+  (lib (name Akiyuki_IC)(type Legacy)(uri ${KIPRJMOD}/lib/Akiyuki_IC.lib)(options "")(descr ""))
+  (lib (name sony-scopeman-rescue)(type Legacy)(uri ${KIPRJMOD}/sony-scopeman-rescue.lib)(options "")(descr ""))
+)
