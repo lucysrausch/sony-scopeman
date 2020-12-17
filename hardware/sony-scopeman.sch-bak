@@ -3047,7 +3047,7 @@ Connection ~ 7600 8100
 Wire Wire Line
 	2300 8800 2300 8950
 $Comp
-L sony-scopeman-rescue:TP4056-otter-sony-scopeman-rescue U8
+L sony-scopeman-rescue:TP4056-otter U8
 U 1 1 5FCF0443
 P 2700 9100
 F 0 "U8" H 2700 9515 50  0000 C CNN

@@ -750,11 +750,11 @@ X VDD 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# sony-scopeman-rescue_TP4056-otter
+# sony-scopeman-rescue_TP4056-otter-sony-scopeman-rescue
 #
-DEF sony-scopeman-rescue_TP4056-otter U 0 40 Y Y 1 F N
+DEF sony-scopeman-rescue_TP4056-otter-sony-scopeman-rescue U 0 40 Y Y 1 F N
 F0 "U" 0 200 50 H V C CNN
-F1 "sony-scopeman-rescue_TP4056-otter" 0 300 50 H V C CNN
+F1 "sony-scopeman-rescue_TP4056-otter-sony-scopeman-rescue" 0 300 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
