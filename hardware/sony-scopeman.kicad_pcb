@@ -2,7 +2,7 @@
 
   (general
     (thickness 1)
-    (drawings 122)
+    (drawings 123)
     (tracks 1000)
     (zones 0)
     (modules 135)
@@ -93,7 +93,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "gerber_V1.0"))
+      (outputdirectory "gerber_V1.2"))
   )
 
   (net 0 "")
@@ -5850,10 +5850,13 @@
       (net 18 +4V))
   )
 
+  (gr_text "BLACK\nPURPLE" (at 123.3 110.1) (layer B.SilkS) (tstamp 5FFF57B9)
+    (effects (font (size 1 0.7) (thickness 0.15)) (justify mirror))
+  )
   (gr_text "BLACK WHITE" (at 136.8 69.1) (layer B.SilkS) (tstamp 5FDB9F68)
     (effects (font (size 1 0.7) (thickness 0.15)) (justify mirror))
   )
-  (gr_text "LIGHT BLUE" (at 106.1 83.8) (layer B.SilkS) (tstamp 5FDB9F62)
+  (gr_text "YELLOW BLUE" (at 111.9 86) (layer B.SilkS) (tstamp 5FDB9F62)
     (effects (font (size 1 0.7) (thickness 0.15)) (justify mirror))
   )
   (gr_text "BLUE RED    WHITE PURPLE" (at 114.3 140.3) (layer B.SilkS)
@@ -10042,14 +10045,14 @@
     )
     (filled_polygon
       (pts
-        (xy 114.687287 65.635858) (xy 114.673144 65.65) (xy 114.687287 65.664143) (xy 114.522429 65.829) (xy 114.317571 65.829)
-        (xy 114.152714 65.664143) (xy 114.166856 65.65) (xy 114.152714 65.635858) (xy 114.317571 65.471) (xy 114.522429 65.471)
+        (xy 117.687287 65.635858) (xy 117.673144 65.65) (xy 117.687287 65.664143) (xy 117.522429 65.829) (xy 117.317571 65.829)
+        (xy 117.152714 65.664143) (xy 117.166856 65.65) (xy 117.152714 65.635858) (xy 117.317571 65.471) (xy 117.522429 65.471)
       )
     )
     (filled_polygon
       (pts
-        (xy 117.687287 65.635858) (xy 117.673144 65.65) (xy 117.687287 65.664143) (xy 117.522429 65.829) (xy 117.317571 65.829)
-        (xy 117.152714 65.664143) (xy 117.166856 65.65) (xy 117.152714 65.635858) (xy 117.317571 65.471) (xy 117.522429 65.471)
+        (xy 114.687287 65.635858) (xy 114.673144 65.65) (xy 114.687287 65.664143) (xy 114.522429 65.829) (xy 114.317571 65.829)
+        (xy 114.152714 65.664143) (xy 114.166856 65.65) (xy 114.152714 65.635858) (xy 114.317571 65.471) (xy 114.522429 65.471)
       )
     )
     (filled_polygon
