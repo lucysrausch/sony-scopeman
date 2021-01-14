@@ -36,19 +36,7 @@ int16_t z_buf[BUFFER_LEN];
 
 int i2s_num = 0;
 
-static const i2s_config_t i2s_config_dac = {
-    .mode = (i2s_mode_t) (I2S_MODE_MASTER | I2S_MODE_TX),
-    .sample_rate = 48000,
-    .bits_per_sample = (i2s_bits_per_sample_t)16,
-    .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
-    .communication_format = (i2s_comm_format_t) (I2S_COMM_FORMAT_I2S | I2S_COMM_FORMAT_I2S_MSB),
-    .intr_alloc_flags = 0, // default interrupt priority
-    .dma_buf_count = 2,
-    .dma_buf_len = BUFFER_LEN/2,
-    .use_apll = false
-};
-
-static const i2s_config_t i2s_config_bt = {
+i2s_config_t i2s_config = {
     .mode = (i2s_mode_t) (I2S_MODE_MASTER | I2S_MODE_TX),
     .sample_rate = 48000,
     .bits_per_sample = (i2s_bits_per_sample_t)16,
@@ -59,7 +47,6 @@ static const i2s_config_t i2s_config_bt = {
     .dma_buf_len = 256,
     .use_apll = false
 };
-
 
 static const i2s_pin_config_t pin_config = {
     .bck_io_num = 12,
@@ -72,14 +59,6 @@ uint32_t calc_buf_pos(int16_t x, int16_t y) { // +/- 1024
   uint16_t x_i = x*2;
   uint16_t y_i = y*2;
   uint32_t buf;
-
-  if (x_i < 0) {
-    x_i = 256*256 + x;
-  }
-
-  if (y_i < 0) {
-    y_i = 256*256 + y;
-  }
 
   buf = x_i | y_i << 16;
   return buf;
@@ -166,29 +145,33 @@ uint8_t sw_mode = 1;
 
 void loop() {
   if (digitalRead(SWITCH) == 0) {
-    if (sw_mode == 0) {
+    if (sw_mode == 0) { // Switch to Video Mode
       i2s_driver_uninstall((i2s_port_t)i2s_num);
       btStop();
       //initialize i2s with configurations above
-      i2s_driver_install((i2s_port_t)i2s_num, &i2s_config_dac, 0, NULL);
+      i2s_config.dma_buf_count = 2;
+      i2s_config.dma_buf_len = BUFFER_LEN/2;
+      i2s_driver_install((i2s_port_t)i2s_num, &i2s_config, 0, NULL);
       i2s_set_pin((i2s_port_t)i2s_num, &pin_config);
 
       sw_mode = 1;
     }
   } else {
-    if (sw_mode == 1) {
+    if (sw_mode == 1) { // Switch to BT Audio Mode
+      i2s_config.dma_buf_count = 32;
+      i2s_config.dma_buf_len = 256;
       i2s_driver_uninstall((i2s_port_t)i2s_num);
       a2dp_sink.set_pin_config(pin_config); 
-      a2dp_sink.set_i2s_config(i2s_config_bt); 
-      a2dp_sink.start("OtterA2DP");
+      a2dp_sink.set_i2s_config(i2s_config); 
+      a2dp_sink.start("Sony Scopeman");
       
       sw_mode = 0;
     }
   }
 
-  if (sw_mode == 1) {
+  if (sw_mode == 1) { // Video Mode
     fillBuffer(BUFFER_LEN, rotation);
-    i2s_write_bytes((i2s_port_t)i2s_num, (const char *)&buf, i2s_config_dac.dma_buf_len * 8, 100);
+    i2s_write_bytes((i2s_port_t)i2s_num, (const char *)&buf, i2s_config.dma_buf_len * 8, 100);
     dt = analogRead(TUNE) / 100000.0f;
   
     rotation = rotation + 0.001;
