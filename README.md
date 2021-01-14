@@ -1,14 +1,14 @@
-# sony-scopeman
+# Sony-Scopeman
 Hardware Design files of a replacement mainboard for the Sony Watchman FD-10. This turns it into a bluetooth and WiFi-enabled vector display.
-
-Deflection coil drivers inspired by http://www.e-basteln.de/file/asteroids/Vectrex_XY_Driver.pdf
-
-A2DP Arduino lib for ESP32: https://github.com/pschatzmann/ESP32-A2DP
 
 # Features
 There are two modes which can be selected via the power switch. 
 * In "Audio" mode, the ESP32 acts as a bluetooth speaker. Play back audio files from your smartphone or laptop to hear and see the soundwaves. You can change the size by adjusting the playback volume
+
+Demo: https://twitter.com/FauthNiklas/status/1337467949318279170
 * In "Video" mode, the ESP32 renders the result of the Lorenz Attractor equation. You can change the simulation speed using the "Tune" knob.
+
+Demo: https://twitter.com/FauthNiklas/status/1339650704584171522
 
 # Instructions
 
@@ -64,3 +64,7 @@ You might also need to readjust the focus. This can be done from outside using t
 
 ![](/pictures/photo_2021-01-13_22-03-35.jpg)
 
+# Credits
+Deflection coil drivers inspired by http://www.e-basteln.de/file/asteroids/Vectrex_XY_Driver.pdf
+
+A2DP Arduino lib for ESP32: https://github.com/pschatzmann/ESP32-A2DP
