@@ -5,10 +5,7 @@ Hardware Design files of a replacement mainboard for the Sony Watchman FD-10. Th
 There are two modes which can be selected via the power switch. 
 * In "Audio" mode, the ESP32 acts as a bluetooth speaker. Play back audio files from your smartphone or laptop to hear and see the soundwaves. You can change the size by adjusting the playback volume
 
-Demo: https://twitter.com/FauthNiklas/status/1337467949318279170
 * In "Video" mode, the ESP32 renders the result of the Lorenz Attractor equation. You can change the simulation speed using the "Tune" knob.
-
-Demo: https://twitter.com/FauthNiklas/status/1339650704584171522
 
 # Instructions
 
